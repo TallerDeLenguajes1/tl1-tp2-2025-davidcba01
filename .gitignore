@@ -1,0 +1,8 @@
+# Ignorar archivos .exe
+*.exe
+
+# Ignorar archivos .obj
+*.obj
+
+# Ignorar archivos .tds
+*.tds
