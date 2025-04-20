@@ -1,0 +1,11 @@
+● ¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
+
+No. Al estar en la rama main, no puedo ver el archivo tp2_1_2.c que he creado en la rama Opcion_2. Porque el archivo solo está disponible en la rama donde fue creado, es decir en main.
+
+● En VSCode vuelva al “Source Control” ¿Qué diferencias nota?
+
+Noto que después del commit inicial, hay una bifurcación del camino hacia dos commits de ramas diferentes, quedando posicionado en el commit de creación de Respuestas.txt en main.
+
+● En VSCode vuelva al “Source Control” vea los cambios, ¿Qué nota?
+
+Noto que ambos commits se "combinan" para volver a tomar un solo camino, y quedo posicionado en un "nuevo" commit unificado en la rama main
