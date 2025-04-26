@@ -13,10 +13,10 @@ struct compu
     char *tipo_cpu;       // Tipo de procesador (apuntador a cadena de caracteres)
 };
 
-
 // *** Declaración de funciones ***
 void listarPCs(struct compu pcs[], int cantidad);
 void mostrarMasVieja(struct compu pcs[], int cantidad);
+void mostrarMasVeloz(struct compu pcs[], int cantidad);
 
 // *** Función principal ***
 int main() {
@@ -39,6 +39,7 @@ int main() {
 
     listarPCs(pcs, CANT_PCS);
     mostrarMasVieja(pcs, CANT_PCS);
+    mostrarMasVeloz(pcs, CANT_PCS);
 
     return 0;
 }
@@ -56,7 +57,7 @@ void listarPCs(struct compu pcs[], int cantidad) {
 }
 
 void mostrarMasVieja(struct compu pcs[], int cantidad) {
-    int indice_mas_vieja = 0; // Suponemos que la primera es la más vieja
+    int indice_mas_vieja = 0; // Suponemos que la primera PC es la más vieja
 
     for (int i = 1; i < cantidad; i++) {
         if (pcs[i].anio < pcs[indice_mas_vieja].anio) {
@@ -69,4 +70,20 @@ void mostrarMasVieja(struct compu pcs[], int cantidad) {
     printf("  Año: %d\n", pcs[indice_mas_vieja].anio);
     printf("  Núcleos: %d\n", pcs[indice_mas_vieja].cantidad_nucleos);
     printf("  Tipo CPU: %s\n\n", pcs[indice_mas_vieja].tipo_cpu);
+}
+
+void mostrarMasVeloz(struct compu pcs[], int cantidad) {
+    int indice_mas_veloz = 0; // Suponemos que la primera PC es la más rápida
+
+    for (int i = 1; i < cantidad; i++) {
+        if (pcs[i].velocidad > pcs[indice_mas_veloz].velocidad) {
+            indice_mas_veloz = i;
+        }
+    }
+
+    printf("PC más veloz:\n");
+    printf("  Velocidad: %d GHz\n", pcs[indice_mas_veloz].velocidad);
+    printf("  Año: %d\n", pcs[indice_mas_veloz].anio);
+    printf("  Núcleos: %d\n", pcs[indice_mas_veloz].cantidad_nucleos);
+    printf("  Tipo CPU: %s\n\n", pcs[indice_mas_veloz].tipo_cpu);
 }
